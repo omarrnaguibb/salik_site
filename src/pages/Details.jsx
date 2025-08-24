@@ -118,7 +118,6 @@ const Details = () => {
     ],
   };
   const options2 = [
-    { value: "", label: "Select" },
     { value: "Private", label: "Private" },
     { value: "Motorcycle", label: "Motorcycle" },
     { value: "Motorcycle 2", label: "Motorcycle 2" },
@@ -179,7 +178,7 @@ const Details = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(false)
+    setError(false);
     if (!category || !emirate) return window.alert("All Feilds Are Required");
     if (category === "Private") {
       if (!plateCode) {
@@ -282,14 +281,21 @@ const Details = () => {
           </div>
           <div className="w-full flex flex-col gap-y-2">
             <span>Category *</span>
-            <div className="flex border w-11/12 text-xl p-2">
+            <div
+              className={`flex border w-11/12 text-xl p-2 ${
+                !emirate && "bg-gray-100 "
+              }`}
+            >
               <select
-                className="flex-1 outline-none text-base bg-white"
+                className={`flex-1 outline-none text-base bg-white ${
+                  !emirate && "bg-gray-100 "
+                } `}
                 value={category}
+                disabled={!emirate}
                 required
                 onChange={(e) => setCategory(e.target.value)}
               >
-                <option hidden>Select</option>
+                <option disabled>Select</option>
                 {options2.map((opt) => {
                   return <option value={opt.label}>{opt.label}</option>;
                 })}
@@ -299,9 +305,15 @@ const Details = () => {
           <div className="w-full flex flex-col gap-y-2">
             <span>Plate code and number *</span>
             <div className="flex w-full gap-x-2">
-              <div className="flex border justify-center items-center w-2/5 text-xl ">
+              <div
+                className={`flex border justify-center items-center w-2/5 text-xl ${
+                  category === "Private" ? "" : "bg-gray-100"
+                }`}
+              >
                 <select
-                  className=" outline-none text-base w-full px-2 bg-white"
+                  className={` outline-none text-base w-full px-2 bg-white ${
+                    category === "Private" ? "" : "bg-gray-100"
+                  }`}
                   value={plateCode}
                   required
                   disabled={category === "Private" ? false : true}
