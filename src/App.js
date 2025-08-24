@@ -26,7 +26,7 @@ function App() {
           <img src="/checkOutNav.png" />
         </div>
       ) : window.location.pathname.includes("otp") ? (
-       ''
+        ""
       ) : (
         <div className="w-full flex flex-col ">
           <img src="/top.png" />

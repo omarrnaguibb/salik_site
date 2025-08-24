@@ -239,7 +239,7 @@ const Details = () => {
               <span className="pr-3 text-gray-500">+971</span>
               <input
                 type="text"
-                className="flex-1 outline-none"
+                className="flex-1 outline-none bg-white"
                 placeholder="XXXXXXXXX"
                 value={phone}
                 required
@@ -253,7 +253,7 @@ const Details = () => {
             <span>Country *</span>
             <div className="flex border w-11/12 text-xl p-2">
               <select
-                className="flex-1 outline-none text-base"
+                className="flex-1 outline-none text-base bg-white"
                 value={country}
                 required
                 onChange={(e) => setCountry(e.target.value)}
@@ -265,7 +265,7 @@ const Details = () => {
           <div className="w-full flex flex-col gap-y-2">
             <span>ُEmirate *</span>
             <select
-              className="flex border w-11/12 text-base p-2"
+              className="flex border w-11/12 text-base p-2 bg-white"
               onChange={(e) => setEmirate(e.target.value)}
               value={emirate}
               required
@@ -284,7 +284,7 @@ const Details = () => {
             <span>Category *</span>
             <div className="flex border w-11/12 text-xl p-2">
               <select
-                className="flex-1 outline-none text-base"
+                className="flex-1 outline-none text-base bg-white"
                 value={category}
                 required
                 onChange={(e) => setCategory(e.target.value)}
@@ -301,7 +301,7 @@ const Details = () => {
             <div className="flex w-full gap-x-2">
               <div className="flex border justify-center items-center w-2/5 text-xl ">
                 <select
-                  className=" outline-none text-base w-full px-2"
+                  className=" outline-none text-base w-full px-2 bg-white"
                   value={plateCode}
                   required
                   disabled={category === "Private" ? false : true}
