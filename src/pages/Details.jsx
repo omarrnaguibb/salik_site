@@ -325,7 +325,7 @@ const Details = () => {
                   })}
                 </select>
               </div>
-              <div className="flex border justify-center items-center w-3/5 text-xl p-2">
+              <div className="flex border justify-center items-center w-3/5 text-base p-2">
                 <input
                   type="text"
                   className=" outline-none w-3/5"
