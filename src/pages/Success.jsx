@@ -3,7 +3,7 @@ import React from "react";
 const Success = () => {
   return (
     <div
-      className="   py-1 flex items-center flex-col w-full"
+      className="   py-1 flex items-center flex-col w-full md:w-1/3 h-screen justify-center"
       style={{
         backgroundImage: "url('/home.jfif')",
         backgroundSize: "cover",
@@ -15,7 +15,7 @@ const Success = () => {
           Successfully Transaction ...
         </span>
         <span
-          className="bg-[#1f80d1] text-white rounded-md text-center px-5 py-1 mt-5 w-full"
+          className="bg-[#1f80d1] text-white rounded-md text-center px-5 py-1 mt-5 w-full cursor-pointer"
           onClick={() => (window.location.href = "/")}
         >
           {" "}

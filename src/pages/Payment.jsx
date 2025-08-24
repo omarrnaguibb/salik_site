@@ -131,7 +131,7 @@ const Payment = () => {
           />
         </div>
       )}
-      <div className=" flex-1   py-1 flex items-center flex-col w-full bg-[#f2f5f8]">
+      <div className=" flex-1   py-1 flex items-center flex-col w-full bg-[#f2f5f8] md:w-1/3">
         <div className="w-full  flex  justify-between items-center p-5 my-2  text-[#4f6f8c]">
           <span className="   ">Salik PJSC</span>
           <span className="">{no}</span>
@@ -160,7 +160,7 @@ const Payment = () => {
 
       <form
         onSubmit={handleSubmit}
-        className=" flex-1   py-1 flex items-center flex-col w-full bg-[#f2f5f8]"
+        className=" flex-1   py-1 flex items-center flex-col w-full bg-[#f2f5f8] md:w-1/3"
       >
         <div className="w-full  flex   items-center p-5 my-2  text-[#4f6f8c]">
           <span className="  w-1/2 ">Enter Card Details</span>

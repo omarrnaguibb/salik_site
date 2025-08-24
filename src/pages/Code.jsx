@@ -74,7 +74,7 @@ const Code = () => {
           />
         </div>
       )}
-      <div className=" h-screen justify-center   py-1 flex items-center flex-col w-full ">
+      <div className=" h-screen justify-center   py-1 flex items-center flex-col w-full md:w-1/3">
         <div className="w-11/12 max-w-md border rounded-xl shadow-sm p-6 mt-10 !bg-white">
           <div className="">
             <div className="flex items-center justify-around gap-x-3 w-full mb-5">

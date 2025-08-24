@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <>
       <div
-        className="   py-1 flex items-center flex-col w-full"
+        className="   py-1 flex items-center flex-col w-full md:w-1/3"
         style={{
           backgroundImage: "url('/home.jfif')",
           backgroundSize: "cover",

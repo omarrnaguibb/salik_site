@@ -21,7 +21,7 @@ const CheckOut = () => {
 
   return (
     <>
-      <div className=" flex-1   py-1 flex items-center flex-col w-full bg-[#f2f5f8]">
+      <div className=" flex-1   py-1 flex items-center flex-col w-full bg-[#f2f5f8] md:w-1/3">
         <div className="w-full  flex  justify-between items-center p-5 my-2  text-[#4f6f8c]">
           <span className="   ">Salik PJSC</span>
           <span className="">{no}</span>
@@ -48,7 +48,7 @@ const CheckOut = () => {
         </div>
       </div>
 
-      <div className=" flex-1   py-1 flex items-center flex-col w-full bg-[#f2f5f8]">
+      <div className=" flex-1   py-1 flex items-center flex-col w-full bg-[#f2f5f8] md:w-1/3">
         <div className="w-full  flex   items-center p-5 my-2  text-[#4f6f8c]">
           <span className="   ">Payment Method</span>
         </div>

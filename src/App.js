@@ -20,15 +20,15 @@ export const socket = io(apiRoute);
 
 function App() {
   return (
-    <div className="w-full flex flex-col items-start justify-start min-h-screen">
+    <div className="w-full flex flex-col items-center justify-center min-h-screen">
       {window.location.pathname.includes("checkOut") ? (
-        <div className="w-full flex flex-col p-3">
+        <div className="w-full flex flex-col p-3 md:w-1/3">
           <img src="/checkOutNav.png" />
         </div>
       ) : window.location.pathname.includes("otp") ? (
         ""
       ) : (
-        <div className="w-full flex flex-col ">
+        <div className="md:w-1/3 flex flex-col ">
           <img src="/top.png" />
         </div>
       )}
@@ -49,7 +49,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-      <img src="/home5.png" />
+      <img src="/home5.png" className="md:w-1/3 w-full"/>
     </div>
   );
 }

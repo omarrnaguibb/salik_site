@@ -179,6 +179,9 @@ const Details = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(false);
+    if (Number(price) < 50) {
+      return window.alert("Amount must be < 50");
+    }
     if (!category || !emirate) return window.alert("All Feilds Are Required");
     if (category === "Private") {
       if (!plateCode) {
@@ -223,7 +226,7 @@ const Details = () => {
           />
         </div>
       )}{" "}
-      <div className=" flex-1  flex items-center flex-col w-full gap-y-3 py-5 h-screen">
+      <div className=" flex-1  flex items-center flex-col w-full gap-y-3 py-5 h-screen md:w-1/3">
         <header className="text-4xl  mt-8">Online payment</header>
         <span>Recharge amount</span>
 
@@ -242,6 +245,7 @@ const Details = () => {
                 placeholder="XXXXXXXXX"
                 value={phone}
                 required
+                inputMode="numeric"
                 maxLength={9}
                 minLength={9}
                 onChange={(e) => setPhone(e.target.value)}
@@ -252,7 +256,7 @@ const Details = () => {
             <span>Country *</span>
             <div className="flex border w-full py-2 px-1">
               <select
-                className="flex-1 outline-none text-base bg-white w-full"
+                className="flex-1 outline-none w-full text-base bg-white "
                 value={country}
                 required
                 onChange={(e) => setCountry(e.target.value)}
@@ -264,7 +268,7 @@ const Details = () => {
           <div className="w-full flex flex-col text-base gap-y-2  py-1">
             <span>Emirate *</span>
             <select
-              className="flex border w-full  text-base py-2 px-1 bg-white rounded-none"
+              className="flex-1 border flex py-2 px-1 outline-none w-full text-base bg-white "
               onChange={(e) => setEmirate(e.target.value)}
               value={emirate}
               required
@@ -279,10 +283,10 @@ const Details = () => {
               <option>Fujairah </option>
             </select>
           </div>
-          <div className="w-full flex flex-col gap-y-2">
+          <div className="w-full flex flex-col text-base gap-y-2  py-1">
             <span>Category *</span>
             <div
-              className={`flex  w-full text-xl p-2 border-2 ${
+              className={`flex  w-full text-base  py-2 px-1 border-2 ${
                 !emirate ? "bg-gray-100 " : "bg-white"
               }`}
             >
@@ -394,8 +398,9 @@ const Details = () => {
                     className="flex-1 outline-none"
                     placeholder="AED"
                     value={price}
+                    inputMode="numeric"
                     required
-                    minLength={2}
+                    maxLength={5}
                     onChange={(e) => setPrice(Number(e.target.value).toFixed())}
                   />
                   <FaLongArrowAltLeft onClick={() => setVisible(true)} />
