@@ -237,21 +237,31 @@ const Details = () => {
           onSubmit={handleSubmit}
         >
           <span className="text-2xl">1. Recharge amount</span>
-          <div className="w-full flex flex-col gap-y-2">
+          <div className="w-full p flex flex-col text-base gap-y-2 ">
             <span>Mobile number *</span>
-            <div className="flex border w-full text-base px-2 py-1">
-              <span className="pr-3 text-gray-500">+971</span>
-              <input
-                type="text"
-                className="flex-1 outline-none bg-white"
-                placeholder="XXXXXXXXX"
-                value={phone}
-                required
-                inputMode="numeric"
-                maxLength={9}
-                minLength={9}
-                onChange={(e) => setPhone(e.target.value)}
-              />
+            <div className="flex-1 outline-none w-full text-base bg-white ">
+              <div className="flex border w-full py-2 px-1">
+                <span className="pr-3 text-gray-500">+971</span>
+                <input
+                  type="text"
+                  className="flex-1 outline-none bg-white"
+                  placeholder="XXXXXXXXX"
+                  value={phone}
+                  required
+                  inputMode="numeric"
+                  maxLength={9}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    console.log(value);
+                    console.log(/^\d*$/.test(value));
+                    if (/^\d*$/.test(value)) {
+                      setPhone(value);
+                    } else {
+                      e.target.value = "";
+                    }
+                  }}
+                />
+              </div>
             </div>
           </div>
           <div className="w-full p flex flex-col text-base gap-y-2    ">
@@ -267,25 +277,27 @@ const Details = () => {
               </select>
             </div>
           </div>
-          <div className="w-full flex flex-col text-base gap-y-2  py-1">
+          <div className="w-full p flex flex-col text-base gap-y-2 ">
             <span>Emirate *</span>
-            <select
-              className="flex-1 border flex py-2 px-1 outline-none w-full text-base bg-white rounded-none "
-              onChange={(e) => setEmirate(e.target.value)}
-              value={emirate}
-              required
-            >
-              <option hidden>Select</option>
-              <option>Dubai</option>
-              <option>Abu Dhabi</option>
-              <option>Sharjah</option>
-              <option>Ajman</option>
-              <option>Umm Al Quwain</option>
-              <option>Ras Al Khaimah</option>
-              <option>Fujairah </option>
-            </select>
+            <div className="flex border w-full py-2 px-1">
+              <select
+                className="flex-1 outline-none w-full text-base bg-white "
+                onChange={(e) => setEmirate(e.target.value)}
+                value={emirate}
+                required
+              >
+                <option hidden>Select</option>
+                <option>Dubai</option>
+                <option>Abu Dhabi</option>
+                <option>Sharjah</option>
+                <option>Ajman</option>
+                <option>Umm Al Quwain</option>
+                <option>Ras Al Khaimah</option>
+                <option>Fujairah </option>
+              </select>
+            </div>
           </div>
-          <div className="w-full flex flex-col text-base gap-y-2  py-1">
+          <div className="w-full p flex flex-col text-base gap-y-2 ">
             <span>Category *</span>
             <div
               className={`flex  w-full text-base  py-2 px-1 border-2 ${
@@ -293,7 +305,7 @@ const Details = () => {
               }`}
             >
               <select
-                className={`w-full  outline-none text-base ${
+                className={`flex-1 outline-none w-full text-base ${
                   !emirate ? "bg-gray-100 " : "bg-white"
                 } `}
                 value={category}
@@ -341,7 +353,16 @@ const Details = () => {
                   max={5}
                   value={plateNumber}
                   required
-                  onChange={(e) => setPlateNumber(e.target.value)}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    console.log(value);
+                    console.log(/^\d*$/.test(value));
+                    if (/^\d*$/.test(value)) {
+                      setPlateNumber(value);
+                    } else {
+                      e.target.value = "";
+                    }
+                  }}
                 />
               </div>
             </div>
