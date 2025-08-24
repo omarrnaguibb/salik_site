@@ -262,7 +262,7 @@ const Details = () => {
             </div>
           </div>
           <div className="w-full flex flex-col gap-y-2">
-            <span>ُEmirate *</span>
+            <span>Emirate *</span>
             <select
               className="flex border w-11/12 text-base p-2 bg-white"
               onChange={(e) => setEmirate(e.target.value)}
