@@ -223,7 +223,7 @@ const Details = () => {
           />
         </div>
       )}{" "}
-      <div className=" flex-1  flex items-center flex-col w-full gap-y-3 py-5">
+      <div className=" flex-1  flex items-center flex-col w-full gap-y-3 py-5 ا-">
         <header className="text-4xl  mt-8">Online payment</header>
         <span>Recharge amount</span>
 
@@ -234,7 +234,7 @@ const Details = () => {
           <span className="text-2xl">1. Recharge amount</span>
           <div className="w-full flex flex-col gap-y-2">
             <span>Mobile number *</span>
-            <div className="flex border w-11/12 text-xl p-2">
+            <div className="flex border w-full text-base px-2 py-1">
               <span className="pr-3 text-gray-500">+971</span>
               <input
                 type="text"
@@ -248,11 +248,11 @@ const Details = () => {
               />
             </div>
           </div>
-          <div className="w-full flex flex-col gap-y-2">
+          <div className="w-full p flex flex-col text-base gap-y-2    ">
             <span>Country *</span>
-            <div className="flex border w-11/12 text-xl p-2">
+            <div className="flex border w-full py-2 px-1">
               <select
-                className="flex-1 outline-none text-base bg-white"
+                className="flex-1 outline-none text-base bg-white w-full"
                 value={country}
                 required
                 onChange={(e) => setCountry(e.target.value)}
@@ -261,10 +261,10 @@ const Details = () => {
               </select>
             </div>
           </div>
-          <div className="w-full flex flex-col gap-y-2">
+          <div className="w-full flex flex-col text-base gap-y-2  py-1">
             <span>Emirate *</span>
             <select
-              className="flex border w-11/12 text-base p-2 bg-white rounded-none"
+              className="flex border w-full  text-base py-2 px-1 bg-white rounded-none"
               onChange={(e) => setEmirate(e.target.value)}
               value={emirate}
               required
@@ -282,12 +282,12 @@ const Details = () => {
           <div className="w-full flex flex-col gap-y-2">
             <span>Category *</span>
             <div
-              className={`flex border w-11/12 text-xl p-2 ${
+              className={`flex  w-full text-xl p-2 border-2 ${
                 !emirate ? "bg-gray-100 " : "bg-white"
               }`}
             >
               <select
-                className={`flex-1 outline-none text-base ${
+                className={`w-full  outline-none text-base ${
                   !emirate ? "bg-gray-100 " : "bg-white"
                 } `}
                 value={category}
@@ -306,12 +306,12 @@ const Details = () => {
             <span>Plate code and number *</span>
             <div className="flex w-full gap-x-2">
               <div
-                className={`flex border justify-center items-center w-2/5 text-xl ${
+                className={`flex  justify-center items-center w-2/5 text-base border-2 ${
                   category === "Private" ? "bg-white" : "bg-gray-100"
                 }`}
               >
                 <select
-                  className={` outline-none text-base w-full px-2  ${
+                  className={` outline-none text-base w-full px-2   ${
                     category === "Private" ? "bg-white" : "bg-gray-100"
                   }`}
                   value={plateCode}
@@ -344,7 +344,7 @@ const Details = () => {
                 <div className="flex flex-col text-base w-full">
                   <div className="w-full flex items-center  justify-between gap-x-3">
                     <span
-                      className={`w-1/4 border p-3 text-center ${
+                      className={`w-1/5 border p-3 text-center ${
                         price === 50 && "border-[#95C7DC] border-2"
                       }`}
                       onClick={() => setPrice(50)}
@@ -352,7 +352,7 @@ const Details = () => {
                       50
                     </span>
                     <span
-                      className={`w-1/4 border p-3 text-center ${
+                      className={`w-1/5 border p-3 text-center ${
                         price === 100 && "border-[#95C7DC] border-2"
                       }`}
                       onClick={() => setPrice(100)}
@@ -360,7 +360,7 @@ const Details = () => {
                       100
                     </span>
                     <span
-                      className={`w-1/4 border p-3 text-center ${
+                      className={`w-1/5 border p-3 text-center ${
                         price === 150 && "border-[#95C7DC] border-2"
                       }`}
                       onClick={() => setPrice(150)}
@@ -368,7 +368,7 @@ const Details = () => {
                       150
                     </span>
                     <span
-                      className={`w-1/4 border p-3 text-center ${
+                      className={`w-1/5 border p-3 text-center ${
                         price === 200 && "border-[#95C7DC] border-2"
                       }`}
                       onClick={() => setPrice(200)}
