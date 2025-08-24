@@ -334,6 +334,7 @@ const Details = () => {
                   type="text"
                   className=" outline-none w-3/5"
                   placeholder=""
+                  inputMode="numeric"
                   value={plateNumber}
                   required
                   onChange={(e) => setPlateNumber(e.target.value)}
