@@ -21,22 +21,23 @@ const Home = () => {
         <div className=" flex flex-col items-center justify-center gap-y-3 bg-white my-3 w-11/12 rounded-sm p-8 ">
           <span className="text-xl font-bold">Recharge </span>
           <span className=" font-bold">Choose a recharge method</span>
-          <div className=" w-full mt-5 flex justify-around items-stretch gap-x-5 ">
+          <div className=" w-full mt-5 flex flex-col justify-around items-stretch gap-y-3 ">
             <div
-              className="flex flex-col justify-center gap-y-3 items-center border p-3 flex-1"
+              className="flex flex-col justify-center gap-y-3 items-center border p-10 flex-1"
               onClick={() => (window.location.href = "/details")}
             >
-              <img src="/home1.png" className="w-14" />
-              <span className="text-xs font-bold">Online Payment</span>
+              <img src="/home1.png" className="w-16" />
+              <span className="text-sm font-bold">Online Payment</span>
             </div>{" "}
             <div
-              className="flex flex-col justify-center gap-y-3 items-center border py-3 px-2 flex-1 "
+              className="flex flex-col justify-center gap-y-3 items-center border py-8  flex-1 "
               onClick={() => setError(!error)}
             >
-              <img src="/home2.png" className="w-10" />
-              <span className="text-xs font-bold">Recharge number </span>
+              <img src="/home2.png" className="w-14" />
+              <span className="text-sm font-bold">Recharge number </span>
             </div>
           </div>
+
           
           {error ? (
             <span className="text-red-500 border border-red-500 py-1 px-5">
