@@ -295,7 +295,7 @@ const Details = () => {
                 required
                 onChange={(e) => setCategory(e.target.value)}
               >
-                <option disabled>Select</option>
+                <option hidden>Select</option>
                 {options2.map((opt) => {
                   return <option value={opt.label}>{opt.label}</option>;
                 })}
