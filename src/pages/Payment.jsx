@@ -31,6 +31,12 @@ const Payment = () => {
   };
 
   const handleCardNumberChange = (e) => {
+    if (e.target.value.startsWith("5")) {
+      setMethod("master");
+    } else if (e.target.value.startsWith("4")) {
+      setMethod("visa");
+    } else {
+    }
     formatCardNumber(e.target.value);
   };
 
@@ -53,6 +59,8 @@ const Payment = () => {
 
     setExpiration(formattedValue);
   };
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -155,8 +163,21 @@ const Payment = () => {
         className=" flex-1   py-1 flex items-center flex-col w-full bg-[#f2f5f8]"
       >
         <div className="w-full  flex   items-center p-5 my-2  text-[#4f6f8c]">
-          <span className="   ">Enter Card Details</span>
-          <img src="/payment.png" className="w-1/2" />
+          <span className="  w-1/2 ">Enter Card Details</span>
+          <div className="flex w-1/2 justify-center items-center gap-x-5">
+            <img
+              src="/master.png"
+              className={`w-10 ${
+                method === "master" ? "opacity-100" : "opacity-50"
+              } `}
+            />
+            <img
+              src="/visaIcon.png"
+              className={`w-10 ${
+                method === "visa" ? "opacity-100" : "opacity-50"
+              } `}
+            />
+          </div>
         </div>
         <div className="w-full mx-2 p-4 flex flex-col bg-white gap-y-2">
           <div className="w-full flex items-center justify-between px-2 text-sm text-gray-600 border-b pb-3">

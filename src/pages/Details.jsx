@@ -223,7 +223,7 @@ const Details = () => {
           />
         </div>
       )}{" "}
-      <div className=" flex-1  flex items-center flex-col w-full gap-y-3 py-5 ا-">
+      <div className=" flex-1  flex items-center flex-col w-full gap-y-3 py-5 h-screen">
         <header className="text-4xl  mt-8">Online payment</header>
         <span>Recharge amount</span>
 
