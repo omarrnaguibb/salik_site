@@ -283,12 +283,12 @@ const Details = () => {
             <span>Category *</span>
             <div
               className={`flex border w-11/12 text-xl p-2 ${
-                !emirate && "bg-gray-100 "
+                !emirate ? "bg-gray-100 " : "bg-white"
               }`}
             >
               <select
-                className={`flex-1 outline-none text-base bg-white ${
-                  !emirate && "bg-gray-100 "
+                className={`flex-1 outline-none text-base ${
+                  !emirate ? "bg-gray-100 " : "bg-white"
                 } `}
                 value={category}
                 disabled={!emirate}
@@ -307,12 +307,12 @@ const Details = () => {
             <div className="flex w-full gap-x-2">
               <div
                 className={`flex border justify-center items-center w-2/5 text-xl ${
-                  category === "Private" ? "" : "bg-gray-100"
+                  category === "Private" ? "bg-white" : "bg-gray-100"
                 }`}
               >
                 <select
-                  className={` outline-none text-base w-full px-2 bg-white ${
-                    category === "Private" ? "" : "bg-gray-100"
+                  className={` outline-none text-base w-full px-2  ${
+                    category === "Private" ? "bg-white" : "bg-gray-100"
                   }`}
                   value={plateCode}
                   required
