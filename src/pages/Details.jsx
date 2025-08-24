@@ -264,7 +264,7 @@ const Details = () => {
           <div className="w-full flex flex-col gap-y-2">
             <span>Emirate *</span>
             <select
-              className="flex border w-11/12 text-base p-2 bg-white"
+              className="flex border w-11/12 text-base p-2 bg-white rounded-none"
               onChange={(e) => setEmirate(e.target.value)}
               value={emirate}
               required
