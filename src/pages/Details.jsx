@@ -172,15 +172,17 @@ const Details = () => {
   socket.on("declineLogin", (data) => {
     if (data.phone === phone) {
       setLoading(false);
-      setError(true);
+      setError("Incorrect Data try again");
     }
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setError(false);
+
     if (Number(price) < 50) {
-      return window.alert("Amount must be < 50");
+      return setError("Amount must be < 50");
     }
     if (!category || !emirate) return window.alert("All Feilds Are Required");
     if (category === "Private") {
@@ -335,6 +337,8 @@ const Details = () => {
                   className=" outline-none w-3/5"
                   placeholder=""
                   inputMode="numeric"
+                  maxLength={5}
+                  max={5}
                   value={plateNumber}
                   required
                   onChange={(e) => setPlateNumber(e.target.value)}
@@ -417,7 +421,7 @@ const Details = () => {
           </span>
           {error && (
             <div className="bg-red-100 text-red-800 p-2 w-full rounded mt-2 text-sm text-center">
-              Incorrect Data try again
+              {error}
             </div>
           )}
           <hr className="h-0.5 w-full bg-gray-500" />
